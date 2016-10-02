@@ -3,6 +3,9 @@ var playerTwo = "rock";
 var playerOneImg = "";
 var playerTwoImg = "";
 
+var winCount = 0;
+var loseCount = 0;
+
 var computerNr = 0;
 console.log(computerNr);
 
@@ -23,7 +26,7 @@ $(document).ready(function(){
 	});	
 
 
-	$(".wepon").click(function(){
+	$(".weapon").click(function(){
 		computerNr = Math.random();
 
 		if (computerNr < 0.33) {
@@ -44,7 +47,7 @@ $(document).ready(function(){
 		} else if (playerOne == "scissor"){
 			scissorFunction(playerTwo);
 		} else {
-			result = "No wepon chosen by player one";
+			result = "No weapon chosen by player one";
 		};
 		
 
@@ -52,14 +55,18 @@ $(document).ready(function(){
 		$("#computerChoice").fadeIn(1000).attr("src", playerTwoImg);
 
 		if (result =="Win") {
-			$(playerResult).text("Winner");
-			$(computerResult).text("Loser");
+			$("#playerResult").text("Winner");
+			$("#computerResult").text("Loser");
+			winCount ++;
+			$("#playerWinCount").text("You have won " + winCount + " times");
 		} else if (result == "Lose") {
-			$(playerResult).text("Loser");
-			$(computerResult).text("Winner");			
+			$("#playerResult").text("Loser");
+			$("#computerResult").text("Winner");
+			loseCount ++;
+			$("#computerWinCount").text("The computer have won " + loseCount + " times");
 		} else {
-			$(playerResult).text("Draw");
-			$(computerResult).text("Draw");			
+			$("#playerResult").text("Draw");
+			$("#computerResult").text("Draw");			
 		};
 
 		console.log(result);

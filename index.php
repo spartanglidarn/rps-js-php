@@ -22,7 +22,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 
 <script src="script.js"></script>
-<script scr="weapons.js"></script>
+
 <title>Gesällprov 2016</title>
 </head>
 <body>
@@ -30,22 +30,28 @@
 	<h1>Gesällprov webutveckling klient 2016</h1>
 
 	<!--<canvas id="gameArea"></canvas> Kommenterar ut canvas och använder IMG till att börja med--> 
-	<div id="weponsArea">
-		<img id="rock" class="wepon" src="rock.png">
-		<img id="paper" class="wepon" src="paper.png">
-		<img id="scissor" class="wepon" src="scissor.png">
+	<div id="weaponsArea">
+		<img id="rock" class="weapon" src="rock.png">
+		<img id="paper" class="weapon" src="paper.png">
+		<img id="scissor" class="weapon" src="scissor.png">
 	</div>
 	<div id="playerScreen" class="resultScreen col-md-6">
 		<h3>Player</h3>
 		<img id="playerChoice">
 		<div class="clear"></div>
-		<h4 id="playerResult" class="resultTitle"></h4>
+		<ul class="resultList">
+			<li><h4 id="playerResult" class="resultTitle">Player</h4></li>
+			<li><h4 id="playerWinCount" class="winCountTitle">You have won 0 times</h4></li>
+		</ul>
 	</div>
 	<div id="computerScreen" class="resultScreen col-md-6">
 		<h3>Computer</h3>
 		<img id="computerChoice" src="paper.png">
 		<div class="clear"></div>
-		<h4 id="computerResult" class="resultTitle"></h4>
+		<ul class="resultList">
+			<li><h4 id="computerResult" class="resultTitle">Computer</h4></li>
+			<li><h4 id="computerWinCount" class="winCountTitle">The computer have won 0 times</h4></li>
+		</ul>
 	</div>
 	<div class="clear"></div>
 
