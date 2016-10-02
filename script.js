@@ -5,6 +5,7 @@ var playerTwoImg = "";
 
 var winCount = 0;
 var loseCount = 0;
+var gameCount = 0;
 
 var computerNr = 0;
 console.log(computerNr);
@@ -57,17 +58,28 @@ $(document).ready(function(){
 		if (result =="Win") {
 			$("#playerResult").text("Winner");
 			$("#computerResult").text("Loser");
+			$("#playerScreen").css("background-color", "green");
+			$("#computerScreen").css("background-color", "red");
 			winCount ++;
 			$("#playerWinCount").text("You have won " + winCount + " times");
 		} else if (result == "Lose") {
 			$("#playerResult").text("Loser");
 			$("#computerResult").text("Winner");
+			$("#computerScreen").css("background-color", "green");
+			$("#playerScreen").css("background-color", "red");
 			loseCount ++;
 			$("#computerWinCount").text("The computer have won " + loseCount + " times");
 		} else {
 			$("#playerResult").text("Draw");
-			$("#computerResult").text("Draw");			
+			$("#computerResult").text("Draw");	
+			$(".resultScreen").css("background-color", "yellow");
 		};
+
+		gameCount ++;
+		var drawCount = gameCount - (winCount + loseCount);
+
+		$("#gameCount").text(gameCount + " games have been played");
+		$("#drawCount").text(drawCount + " games have ended in a draw");
 
 		console.log(result);
 		});

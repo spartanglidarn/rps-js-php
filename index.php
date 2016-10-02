@@ -54,6 +54,12 @@
 		</ul>
 	</div>
 	<div class="clear"></div>
+	<div id="stats">
+	<ul>
+		<li><h4 id="gameCount"></h4></li>
+		<li><h4 id="drawCount"></h4></li>
+	</ul>		
+	</div>
 
 <footer>Skapad av Erik Boström 2016</footer>
 </div>

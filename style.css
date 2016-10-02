@@ -33,3 +33,7 @@
 	margin: 0;
 	list-style: none;
 }
+
+.weapon:hover {
+	text-decoration: underline;
+}
