@@ -19,8 +19,13 @@
 <!-- Slutet av Bootstrap filer -->
 
 <!-- Egna CSS och JS filer -->
+
 <link rel="stylesheet" type="text/css" href="style.css">
 
+<script src="weapons/rock.js"></script>
+<script src="weapons/paper.js"></script>
+<script src="weapons/scissor.js"></script>
+<script src="result.js"></script>
 <script src="script.js"></script>
 
 <title>Gesällprov 2016</title>
@@ -37,7 +42,7 @@
 	</div>
 	<div id="playerScreen" class="resultScreen col-md-6">
 		<h3>Player</h3>
-		<img id="playerChoice">
+		<img id="playerChoice" class="weaponChoice">
 		<div class="clear"></div>
 		<ul class="resultList">
 			<li><h4 id="playerResult" class="resultTitle">Player</h4></li>
@@ -46,7 +51,7 @@
 	</div>
 	<div id="computerScreen" class="resultScreen col-md-6">
 		<h3>Computer</h3>
-		<img id="computerChoice" src="paper.png">
+		<img id="computerChoice" class="weaponChoice">
 		<div class="clear"></div>
 		<ul class="resultList">
 			<li><h4 id="computerResult" class="resultTitle">Computer</h4></li>

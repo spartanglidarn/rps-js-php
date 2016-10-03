@@ -9,6 +9,11 @@
 	border: 1px solid black;
 	border-radius: 15px;
 	margin: 10px;
+	position: relative;
+}
+
+.weaponChoice{
+	
 }
 
 .resultScreen img {
@@ -34,6 +39,10 @@
 	list-style: none;
 }
 
+.weapon {
+	border: 5px solid white;
+}
+
 .weapon:hover {
-	text-decoration: underline;
+border: 5px solid black;
 }
