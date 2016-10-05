@@ -39,6 +39,8 @@ a:hover {
 	border-radius: 15px;
 	margin: 10px;
 	position: relative;
+	height: 400px;
+	width: 400px;
 }
 
 .blockList ul {

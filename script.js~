@@ -36,7 +36,8 @@ $(document).ready(function(){
 	});	
 
 //definerar vad som händer när användaren klickar på något av vapnen.
-	$(".weapon").click(function(){
+var weaponClick =function(){
+       	$(".weapon").click(function(){
 		//skapar ett random nummer och väljer sedan ett vapen till datorn
 		computerNr = Math.random();
 
@@ -64,10 +65,34 @@ $(document).ready(function(){
 			result = "No weapon chosen by player one";
 		};
 		
-		//animerar bilder vid val av vapen. 
-		var animateWeapon = new Animate(playerOneImg, playerTwoImg);
-	//	$("#computerChoice").fadeIn(1000).attr("src", playerTwoImg);		
+		//animerar bilder vid val av vapen.
+			var picArray = new Array();
+			picArray[0] = "rock.png";
+			picArray[1] = "paper.png";
+			picArray[2] = "scissor.png";
+			var thisId = 0;
+			var intervalCount = 0;
 
+			//sätter en interval som visar alla val i datorns resultat skärm.
+			var theInterval = setInterval(function () {
+				$("#computerChoice").attr("src", picArray[thisId]);
+				thisId++;
+				if (thisId == 3) thisId=0;
+				intervalCount ++;
+				//avaktiverar weapon knappen så att användaren inte kan göra ett nytt val under animationen.
+				$(".weapon").off("click");	
+				if (intervalCount == 20){
+					clearInterval(theInterval);
+					$("#computerChoice").attr("src", playerTwoImg);
+					console.log(playerTwoImg);
+					//aktiverar weapon knappen med funktionen på nytt
+					$(".weapon").on("click", weaponClick());	
+				}
+			}, 50);	
+			//lägger till spelarens val av vapen.
+			$("#playerChoice").fadeIn(1000).attr("src", playerOneImg);
+//		}
+	
 		//Kollar vem som har vunnit, koden för detta objekt ligger i separat fil, result.js
 		var runResult = new Result(result);
 
@@ -80,7 +105,10 @@ $(document).ready(function(){
 
 		//skriver ut resultatet i konsolen för att förenkla tester
 		console.log(result);
-		});
+		});//stänger weapon.click funktionen 
+	};//stänger weaponClick funktionen
+//kör weaponClick funktionen så att alla vapen aktiveras och är klickbara
+weaponClick();
 
 });
 
