@@ -22,6 +22,9 @@ console.log(computerNr);
 
 //kod som körs när sidan har laddats klart
 $(document).ready(function(){
+//definerar vad som händer när användaren klickar på något av vapnen.
+var weaponClick =function(){
+
 	$("#rock").click(function(){
 		playerOne = "rock";
 		playerOneImg = "rock.png"
@@ -35,8 +38,6 @@ $(document).ready(function(){
 		playerOneImg = "scissor.png"
 	});	
 
-//definerar vad som händer när användaren klickar på något av vapnen.
-var weaponClick =function(){
        	$(".weapon").click(function(){
 		//skapar ett random nummer och väljer sedan ett vapen till datorn
 		computerNr = Math.random();
@@ -86,6 +87,7 @@ var weaponClick =function(){
 					$("#computerChoice").attr("src", playerTwoImg);
 					console.log(playerTwoImg);
 					//aktiverar weapon knappen med funktionen på nytt
+					var runResult = new Result(result);
 					$(".weapon").on("click", weaponClick());	
 				}
 			}, 50);	
@@ -94,7 +96,7 @@ var weaponClick =function(){
 //		}
 	
 		//Kollar vem som har vunnit, koden för detta objekt ligger i separat fil, result.js
-		var runResult = new Result(result);
+	//	var runResult = new Result(result);
 
 		//Räknar hur många gånger användaren har spelat plus hur många gånger det blivit lika.
 		gameCount ++;

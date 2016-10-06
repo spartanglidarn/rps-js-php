@@ -22,6 +22,22 @@ console.log(computerNr);
 
 //kod som körs när sidan har laddats klart
 $(document).ready(function(){
+	/*$("#rock").click(function(){
+		playerOne = "rock";
+		playerOneImg = "rock.png"
+	});
+	$("#paper").click(function(){
+		playerOne = "paper";
+		playerOneImg = "paper.png"
+	});
+	$("#scissor").click(function(){
+		playerOne = "scissor";
+		playerOneImg = "scissor.png"
+	});*/	
+
+//definerar vad som händer när användaren klickar på något av vapnen.
+var weaponClick =function(){
+
 	$("#rock").click(function(){
 		playerOne = "rock";
 		playerOneImg = "rock.png"
@@ -35,8 +51,6 @@ $(document).ready(function(){
 		playerOneImg = "scissor.png"
 	});	
 
-//definerar vad som händer när användaren klickar på något av vapnen.
-var weaponClick =function(){
        	$(".weapon").click(function(){
 		//skapar ett random nummer och väljer sedan ett vapen till datorn
 		computerNr = Math.random();
