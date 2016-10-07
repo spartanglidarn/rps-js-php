@@ -11,11 +11,11 @@ h1, h2, h3, h4, h4, h6 {
 	padding: 10px;
 }
 
-h1 {
-	background-color: #004060;
-	color: #ffffff;
-	text-align: center;
-}
+	h1 {
+		background-color: #004060;
+		color: #ffffff;
+		text-align: center;
+	}
 
 a, a:visited {
 	color: #006699;
@@ -43,32 +43,49 @@ a:hover {
 	width: 400px;
 }
 
+	.resultScreen img {
+		display: none;
+	} 
+
+.resultList {
+	margin: 0;
+	list-style: none;
+}
+.resultScreen {
+	text-align: center;
+	margin: 10px;
+}
+
+.thinkingScreen {
+	background-color: lightblue;
+}
+
+.winnerScreen {
+	background-color: green;
+}
+.loserScreen {
+	background-color: red;
+}
+.drawScreen {
+	background-color: yellow;
+}
 .blockList ul {
 	list-style-type: none;
 	margin: 0;
 	padding 0;
 }
 
-.blockList li{
-	float: left;
-	margin: 10px;
-}
+	.blockList li{
+		float: left;
+		margin: 10px;
+	}
 
-.blockList li img{
-	display: block;
-	margin: 10px 20px;
-}
-
-.resultScreen img {
-	display: none;
-} 
-
-.weaponChoice {
-	margin: 10px;
-}
-
-.clear {
-	clear: both;
+	.blockList li img{
+		display: block;
+		margin: 10px 20px;
+	}
+#playerChoice {
+	visibility: hidden;
 }
 
 #computerChoice {
@@ -79,17 +96,21 @@ a:hover {
 	transform: scaleX(-1);
 	filter: FlipH;
 	-ms-filter: "FlipH";
+	visibility: hidden;
 }
 
-.resultList {
-	margin: 0;
-	list-style: none;
+.weaponChoice {
+	margin: 10px;
 }
 
 .weapon {
 	border: 5px solid white;
 }
 
-.weapon:hover {
-border: 5px solid black;
+	.weapon:hover {
+	border: 5px solid black;
+	}
+
+.clear {
+	clear: both;
 }

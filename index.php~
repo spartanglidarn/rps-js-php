@@ -36,20 +36,20 @@
 <div id="resultScreen" class="blockList">
 	<ul>
 	<li><div id="playerScreen" class="resultScreen">
-		<h3>Player</h3>
-		<img id="playerChoice" class="weaponChoice">
+		<h2 id="playerResult" class="resultTitle">Player</h2>
+		<img id="playerChoice" class="weaponChoice" src="rock.png">
 		<div class="clear"></div>
 		<ul class="resultList">
-			<li><h4 id="playerResult" class="resultTitle">Player</h4></li>
+			<li><h4>Player</h4></li>
 			<li><h4 id="playerWinCount" class="winCountTitle">You have won 0 times</h4></li>
 		</ul>
 	</div></li>
 	<li><div id="computerScreen" class="resultScreen">
-		<h3>Computer</h3>
-		<img id="computerChoice" class="weaponChoice">
+		<h2 id="computerResult" class="resultTitle">Computer</h2>
+		<img id="computerChoice" class="weaponChoice" src="rock.png">
 		<div class="clear"></div>
 		<ul class="resultList">
-			<li><h4 id="computerResult" class="resultTitle">Computer</h4></li>
+			<li><h4>Computer</h4></li>
 			<li><h4 id="computerWinCount" class="winCountTitle">The computer have won 0 times</h4></li>
 		</ul>
 	</div></li>
