@@ -41,6 +41,8 @@ var weaponClick =function(){
        	$(".weapon").click(function(){
 		$(".resultScreen").removeClass("winnerScreen loserScreen drawScreen").toggleClass("thinkingScreen", true);
 		//skapar ett random nummer och väljer sedan ett vapen till datorn
+		$("#playerResult").text("You choose " + playerOne);
+		$("#computerResult").text("Tinking");
 		gameCount ++;
 		//var drawCount = gameCount - (winCount + loseCount);
 		computerNr = Math.random();
