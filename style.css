@@ -56,19 +56,19 @@ a:hover {
 	margin: 10px;
 }
 
-.thinkingScreen {
-	background-color: lightblue;
-}
+	.thinkingScreen {
+		background-color: lightblue;
+	}
 
-.winnerScreen {
-	background-color: green;
-}
-.loserScreen {
-	background-color: red;
-}
-.drawScreen {
-	background-color: yellow;
-}
+	.winnerScreen {
+		background-color: green;
+	}
+	.loserScreen {
+		background-color: red;
+	}
+	.drawScreen {
+		background-color: yellow;
+	}
 .blockList ul {
 	list-style-type: none;
 	margin: 0;

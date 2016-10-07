@@ -38,8 +38,10 @@ var weaponClick =function(){
 		playerOneImg = "scissor.png"
 	});	
 
-       	$(".weapon").click(function(){
-		$(".resultScreen").removeClass("winnerScreen loserScreen drawScreen").toggleClass("thinkingScreen", true);
+	$(".weapon").click(function(){
+		$(".weaponChoice").css("display", "none");
+		$(".weaponChoice").fadeIn(500);
+		$(".resultScreen").removeClass("winnerScreen loserScreen drawScreen thinkingScreen").toggleClass("thinkingScreen", true);
 		//skapar ett random nummer och väljer sedan ett vapen till datorn
 		$("#playerResult").text("You choose " + playerOne);
 		$("#computerResult").text("Tinking");
