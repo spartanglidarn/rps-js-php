@@ -26,12 +26,16 @@ a:hover {
 }
 
 #container {
-	border: 1px solid black;
-	border-radius: 15px;
+	
 	width: 90%;
 	margin: 0 auto;
 }
-
+#gameArea {
+	margin: 0 auto;
+	width: 80%;
+	
+	padding: 0 auto;
+}
 .resultScreen {
 	float: left;
 	width: 100%;
@@ -41,6 +45,8 @@ a:hover {
 	position: relative;
 	height: 400px;
 	width: 400px;
+	text-align: center;
+	margin: 10px;
 }
 
 	.resultScreen img {
@@ -51,10 +57,7 @@ a:hover {
 	margin: 0;
 	list-style: none;
 }
-.resultScreen {
-	text-align: center;
-	margin: 10px;
-}
+
 
 	.thinkingScreen {
 		background-color: lightblue;
@@ -72,7 +75,7 @@ a:hover {
 .blockList ul {
 	list-style-type: none;
 	margin: 0;
-	padding 0;
+	padding: 0;
 }
 
 	.blockList li{
@@ -85,7 +88,7 @@ a:hover {
 		margin: 10px 20px;
 	}
 #playerChoice {
-	visibility: hidden;
+
 }
 
 #computerChoice {
@@ -96,11 +99,12 @@ a:hover {
 	transform: scaleX(-1);
 	filter: FlipH;
 	-ms-filter: "FlipH";
-	visibility: hidden;
+
 }
 
 .weaponChoice {
 	margin: 10px;
+/*	visibility: hidden;*/
 }
 
 .weapon {
