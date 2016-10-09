@@ -18,10 +18,6 @@ var computerMoves = new Array();
 //Håller det nummer som definerar datorns vapen
 var computerNr = 0;
 
-console.log(computerNr);
-
-
-
 //kod som körs när sidan har laddats klart
 $(document).ready(function(){
 	//kör weaponClick funktionen så att alla vapen aktiveras och är klickbara

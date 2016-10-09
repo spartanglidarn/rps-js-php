@@ -46,7 +46,7 @@ var weaponClick =function(){
 			var scissorWeapon = new Scissor(playerTwo);
 		} else {
 			result = "No weapon chosen by player one";
-		};
+		};//avslutar funktionen som körs när man klickar på en .weapon knapp
 
 		//animerar bilder vid val av vapen.
 		var AnimateResult = new Animate(playerOneImg, playerTwoImg, weaponClick);

@@ -32,6 +32,4 @@ var Animate = function(imgOne, imgTwo, weaponClick) {
 			};	
 	}, 100);	
 	$("#playerChoice").css("visibility","visible").fadeIn(1000).attr("src", imgOne);
-
-	
 }

@@ -31,7 +31,7 @@
 	<div id="container" class="container">
 
 
-	<div id="gameArea">
+
 		<div id="weaponsArea" class="blockList">
 		<ul>
 			<li><img id="rock" class="weapon" src="rock.png"></li>
@@ -41,32 +41,32 @@
 		</div>
 	<div class="clear"></div>
 	<div id="resultBlock" class="blockList">
-		<ul>
-		<li><div id="playerScreen" class="resultScreen">
+
+		<div id="playerScreen" class="resultScreen">
 			<h2 id="playerResult" class="resultTitle">Player</h2>
 			<img id="playerChoice" class="weaponChoice" src="fraga.png">
 			<div class="clear"></div>
 				<h4 id="playerWinCount" class="winCountTitle">You have won 0 times</h4>
-		</div></li>
-		<li><div id="computerScreen" class="resultScreen">
+		</div>
+		<div id="computerScreen" class="resultScreen">
 
 			<h2 id="computerResult" class="resultTitle">Computer</h2>
 			<img id="computerChoice" class="weaponChoice" src="fraga2.png">
 			<div class="clear"></div>
 				<h4 id="computerWinCount" class="winCountTitle">The computer have won 0 times</h4>
-		</div></li>
-		</ul>
-	</div>
-		<div class="clear"></div>
-		<div id="stats">
-
-			<h4 id="gameCount">0 games have been played</h4>
-			<h4 id="drawCount">0 games have ended in a draw</h4>
-		
 		</div>
-		<div class="clear"></div>
+		
+	</div>
+	<div class="clear"></div>
+	<div id="stats">
 
-</div>
+		<h4 id="gameCount">0 games have been played</h4>
+		<h4 id="drawCount">0 games have ended in a draw</h4>
+		
+	</div>
+	<div class="clear"></div>
+
+
 </div>
 <footer>Skapad av Erik Boström 2016</footer>
 </body>

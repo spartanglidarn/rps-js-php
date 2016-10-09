@@ -20,7 +20,6 @@ body{
 }	
 
 h1, h2, h3, h4, h4, h6 {
-
 	padding: 10px;
 }
 
@@ -49,7 +48,6 @@ footer {
 
 }
 
-
 .blockList ul {
 	list-style-type: none;
 	margin: 0;
@@ -77,15 +75,20 @@ footer {
 	background-color: #312c32; 
 }
 
-	.resultScreen img {
-		display: none;
-	} 
- 
-/*av någon anledning så flyttades datorns bild ned när jag satte float right på den, 
-där för var jag tvungen att sätta margin top på bilden och på texten under för att 
-linjera med spelarens bild och text.*/
+.resultScreen img {
+	margin: 0 auto;
+}
+
+.weapon {
+	border: 5px solid white;
+
+}
+
+	.weapon:hover {
+	border: 5px solid black;
+	}
+
 #computerChoice {
-	margin-top: 0px;
 	float: right;
 	-moz-transform: scaleX(-1);
 	-o-transform: scaleX(-1);
@@ -95,17 +98,6 @@ linjera med spelarens bild och text.*/
 	-ms-filter: "FlipH";
 
 }
-
-#computerWinCount {
-	margin-top: 10px;
-}
-
-.resultList {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-}
-
 
 	.thinkingScreen {
 		background-color: #455A64;
@@ -139,15 +131,6 @@ linjera med spelarens bild och text.*/
 	position: relative;
 	float: right;
 }
-
-.weapon {
-	border: 5px solid white;
-
-}
-
-	.weapon:hover {
-	border: 5px solid black;
-	}
 
 .clear {
 	clear: both;
