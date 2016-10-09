@@ -10,9 +10,9 @@
 <!-- Egna CSS och JS filer -->
 
 <link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" type="text/css" href="mobile.css">
-<link rel="stylesheet" type="text/css" href="desktop.css">
 
+<link rel="stylesheet" type="text/css" href="desktop.css">
+<link rel="stylesheet" type="text/css" href="mobile.css">
 
 <script src="weapons/rock.js"></script>
 <script src="weapons/paper.js"></script>
