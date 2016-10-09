@@ -38,6 +38,12 @@ a:hover {
 	text-decoration: underline;
 }
 
+footer {
+	background-color: #004060;
+	color: #ffffff;
+	text-align: center;
+}
+
 #container {
 	margin: 0 auto;
 
@@ -102,7 +108,7 @@ linjera med spelarens bild och text.*/
 
 
 	.thinkingScreen {
-		background-color: #98dafc;
+		background-color: #455A64;
 		color: #312c32;
 	}
 
@@ -123,13 +129,16 @@ linjera med spelarens bild och text.*/
 #stats {
 	border-radius:15px;
 	background-color: #312c32;
+	float: left;
 }
-
-#stats ul {
-	list-style-type: none;
+#gameCount {
+	position: relative;
+	float: left;
 }
-
-
+#drawCount {
+	position: relative;
+	float: right;
+}
 
 .weapon {
 	border: 5px solid white;

@@ -19,6 +19,7 @@
 <script src="weapons/scissor.js"></script>
 <script src="animate.js"></script>
 <script src="result.js"></script>
+<script src="weaponClick.js"></script>
 <script src="script.js"></script>
 
 <title>Gesällprov 2016</title>
@@ -26,7 +27,7 @@
 <body>
 
 
-	<h1>Gesällprov webutveckling klient 2016</h1>
+	<h1>Gesällprov webbutveckling klient 2016</h1>
 	<div id="container" class="container">
 
 
@@ -50,7 +51,7 @@
 		<li><div id="computerScreen" class="resultScreen">
 
 			<h2 id="computerResult" class="resultTitle">Computer</h2>
-			<img id="computerChoice" class="weaponChoice" src="fraga.png">
+			<img id="computerChoice" class="weaponChoice" src="fraga2.png">
 			<div class="clear"></div>
 				<h4 id="computerWinCount" class="winCountTitle">The computer have won 0 times</h4>
 		</div></li>
@@ -58,15 +59,16 @@
 	</div>
 		<div class="clear"></div>
 		<div id="stats">
-		<ul>
-			<li><h4 id="gameCount">0 games have been played</h4></li>
-			<li><h4 id="drawCount">0 games have ended in a draw</h4></li>
-		</ul>		
-		</div>
 
-	<footer>Skapad av Erik Boström 2016</footer>
+			<h4 id="gameCount">0 games have been played</h4>
+			<h4 id="drawCount">0 games have ended in a draw</h4>
+		
+		</div>
+		<div class="clear"></div>
+
 </div>
 </div>
+<footer>Skapad av Erik Boström 2016</footer>
 </body>
 
 </html>
