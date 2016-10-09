@@ -1,13 +1,26 @@
+/*
+Color scheme.
+#feffff  white
+#98dafc  blue
+#daad86  brownish
+#312c32  blackish
+
+#e6cf8b draw yellow
+#4CAF50 winner green
+#D32F2F loser red
+*/
+
+
 body{
-	background-color: #eeeeee; /* light grey */
+	background-color: #feffff; /* light grey */
 	font-family: "HelvetivaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	font-weight: 500;
 	font-size: 14px;
-	color: #1e1e1e; /* dark gray */
+	color: #daad86;
 }	
 
 h1, h2, h3, h4, h4, h6 {
-	color: #004060;
+
 	padding: 10px;
 }
 
@@ -26,52 +39,11 @@ a:hover {
 }
 
 #container {
-	
-	width: 90%;
 	margin: 0 auto;
-}
-#gameArea {
-	margin: 0 auto;
-	width: 80%;
-	
-	padding: 0 auto;
-}
-.resultScreen {
-	float: left;
-	width: 100%;
-	border: 1px solid black;
-	border-radius: 15px;
-	margin: 10px;
-	position: relative;
-	height: 400px;
-	width: 400px;
-	text-align: center;
-	margin: 10px;
-}
 
-	.resultScreen img {
-		display: none;
-	} 
-
-.resultList {
-	margin: 0;
-	list-style: none;
 }
 
 
-	.thinkingScreen {
-		background-color: lightblue;
-	}
-
-	.winnerScreen {
-		background-color: green;
-	}
-	.loserScreen {
-		background-color: red;
-	}
-	.drawScreen {
-		background-color: yellow;
-	}
 .blockList ul {
 	list-style-type: none;
 	margin: 0;
@@ -85,13 +57,29 @@ a:hover {
 
 	.blockList li img{
 		display: block;
-		margin: 10px 20px;
+		margin: 10px 10px;
 	}
-#playerChoice {
 
+.resultScreen {
+	float: left;
+	border-radius: 15px;
+	position: relative;
+	height: 400px;
+	width: 350px;
+	text-align: center;
+	margin: 10px;
+	background-color: #312c32; 
 }
 
+	.resultScreen img {
+		display: none;
+	} 
+ 
+/*av någon anledning så flyttades datorns bild ned när jag satte float right på den, 
+där för var jag tvungen att sätta margin top på bilden och på texten under för att 
+linjera med spelarens bild och text.*/
 #computerChoice {
+	margin-top: 0px;
 	float: right;
 	-moz-transform: scaleX(-1);
 	-o-transform: scaleX(-1);
@@ -102,13 +90,50 @@ a:hover {
 
 }
 
-.weaponChoice {
-	margin: 10px;
-/*	visibility: hidden;*/
+#computerWinCount {
+	margin-top: 10px;
 }
+
+.resultList {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+
+	.thinkingScreen {
+		background-color: #98dafc;
+		color: #312c32;
+	}
+
+
+	.winnerScreen {
+		background-color: #4CAF50;
+		color: #312c32;
+	}
+	.loserScreen {
+		background-color: #D32F2F;
+		color: #312c32;
+	}
+	.drawScreen {
+		background-color: #e6cf8b;
+		color: #312c32;
+	}
+
+#stats {
+	border-radius:15px;
+	background-color: #312c32;
+}
+
+#stats ul {
+	list-style-type: none;
+}
+
+
 
 .weapon {
 	border: 5px solid white;
+
 }
 
 	.weapon:hover {

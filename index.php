@@ -10,6 +10,9 @@
 <!-- Egna CSS och JS filer -->
 
 <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="mobile.css">
+<link rel="stylesheet" type="text/css" href="desktop.css">
+
 
 <script src="weapons/rock.js"></script>
 <script src="weapons/paper.js"></script>
@@ -42,27 +45,22 @@
 			<h2 id="playerResult" class="resultTitle">Player</h2>
 			<img id="playerChoice" class="weaponChoice" src="fraga.png">
 			<div class="clear"></div>
-			<ul class="resultList">
-				<li><h4>Player</h4></li>
-				<li><h4 id="playerWinCount" class="winCountTitle">You have won 0 times</h4></li>
-			</ul>
+				<h4 id="playerWinCount" class="winCountTitle">You have won 0 times</h4>
 		</div></li>
 		<li><div id="computerScreen" class="resultScreen">
+
 			<h2 id="computerResult" class="resultTitle">Computer</h2>
 			<img id="computerChoice" class="weaponChoice" src="fraga.png">
 			<div class="clear"></div>
-			<ul class="resultList">
-				<li><h4>Computer</h4></li>
-				<li><h4 id="computerWinCount" class="winCountTitle">The computer have won 0 times</h4></li>
-			</ul>
+				<h4 id="computerWinCount" class="winCountTitle">The computer have won 0 times</h4>
 		</div></li>
 		</ul>
 	</div>
 		<div class="clear"></div>
 		<div id="stats">
 		<ul>
-			<li><h4 id="gameCount"></h4></li>
-			<li><h4 id="drawCount"></h4></li>
+			<li><h4 id="gameCount">0 games have been played</h4></li>
+			<li><h4 id="drawCount">0 games have ended in a draw</h4></li>
 		</ul>		
 		</div>
 
