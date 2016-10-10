@@ -2,15 +2,15 @@
 var weaponClick =function(){
 	$("#rock").click(function(){
 		playerOne = "rock";
-		playerOneImg = "rock.png"
+		playerOneImg = "img/rock.png"
 	});
 	$("#paper").click(function(){
 		playerOne = "paper";
-		playerOneImg = "paper.png"
+		playerOneImg = "img/paper.png"
 	});
 	$("#scissor").click(function(){
 		playerOne = "scissor";
-		playerOneImg = "scissor.png"
+		playerOneImg = "img/scissor.png"
 	});	
 
 	$(".weapon").click(function(){
@@ -26,13 +26,13 @@ var weaponClick =function(){
 
 		if (computerNr < 0.33) {
 			playerTwo = "rock";
-			playerTwoImg = "rock.png"
+			playerTwoImg = "img/rock.png"
 		} else if (computerNr < 0.66){
 			playerTwo = "paper";
-			playerTwoImg = "paper.png"
+			playerTwoImg = "img/paper.png"
 		} else {
 			playerTwo = "scissor";
-			playerTwoImg = "scissor.png"
+			playerTwoImg = "img/scissor.png"
 		}
 
 		//Kollar vad användaren har valt för vapen 

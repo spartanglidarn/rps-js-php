@@ -2,9 +2,9 @@
 var Animate = function(imgOne, imgTwo, weaponClick) {
 	var thinkingArray = new Array();
 	var picArray = new Array();
-	picArray[0] = "rock.png";
-	picArray[1] = "paper.png";
-	picArray[2] = "scissor.png";
+	picArray[0] = "img/rock.png";
+	picArray[1] = "img/paper.png";
+	picArray[2] = "img/scissor.png";
 	var thinkingTime = 30;
 	var thisId = 0;
 	var intervalCount = 0;
@@ -22,7 +22,7 @@ var Animate = function(imgOne, imgTwo, weaponClick) {
 			clearInterval(theInterval);
 			$(".resultScreen").toggleClass("thinkingScreen", false);
 			$("#computerChoice").attr("src", imgTwo);
-			console.log(imgTwo);
+			//console.log(imgTwo);
 			var runResult = new Result(result);
 			drawCount = gameCount - (winCount + loseCount);
 			$("#gameCount").text(gameCount + " games played");
