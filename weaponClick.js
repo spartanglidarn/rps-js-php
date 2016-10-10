@@ -1,19 +1,19 @@
 //definerar vad som händer när användaren klickar på något av vapnen.
 var weaponClick =function(){
-	$("#rock").click(function(){
+	$("#rock").on("click" , function(){
 		playerOne = "rock";
 		playerOneImg = "img/rock.png"
 	});
-	$("#paper").click(function(){
+	$("#paper").on("click" , function(){
 		playerOne = "paper";
 		playerOneImg = "img/paper.png"
 	});
-	$("#scissor").click(function(){
+	$("#scissor").on("click" , function(){
 		playerOne = "scissor";
 		playerOneImg = "img/scissor.png"
 	});	
 
-	$(".weapon").click(function(){
+	$(".weapon").on("click" , function(){
 		$(".weaponChoice").css("display", "none");
 		$(".weaponChoice").fadeIn(2000);
 		$(".resultScreen").removeClass("winnerScreen loserScreen drawScreen thinkingScreen").toggleClass("thinkingScreen", true);

@@ -32,9 +32,9 @@
 
 		<div id="weaponsArea" class="blockList">
 		<ul>
-			<li><img id="rock" class="weapon" src="img/rock.png"></li>
-			<li><img id="paper" class="weapon" src="img/paper.png"></li>
-			<li><img id="scissor" class="weapon" src="img/scissor.png"></li>
+			<li id="rock" class="weapon"><img src="img/rock.png" alt="Rock"></li>
+			<li id="paper" class="weapon"><img src="img/paper.png" alt="Paper"></li>
+			<li id="scissor" class="weapon"><img src="img/scissor.png" alt="Scissor"></li>
 		</ul>
 		</div>
 	<div class="clear"></div>
@@ -42,14 +42,14 @@
 
 		<div id="playerScreen" class="resultScreen">
 			<h2 id="playerResult" class="resultTitle">Player</h2>
-			<img id="playerChoice" class="weaponChoice" src="img/fraga.png">
+			<img id="playerChoice" class="weaponChoice" src="img/fraga.png" alt="Player weapon choice">
 			<div class="clear"></div>
 				<h2 id="playerWinCount" class="winCountTitle">You have won 0 times</h2>
 		</div>
 		<div id="computerScreen" class="resultScreen">
 
 			<h2 id="computerResult" class="resultTitle">Computer</h2>
-			<img id="computerChoice" class="weaponChoice" src="img/fraga2.png">
+			<img id="computerChoice" class="weaponChoice" src="img/fraga2.png" alt="computer weapon choice">
 			<div class="clear"></div>
 				<h2 id="computerWinCount" class="winCountTitle">The computer have won 0 times</h2>
 		</div>
