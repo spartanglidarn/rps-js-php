@@ -2,6 +2,9 @@
 	body {
 
 	}
+
+
+
 	#container {
 		width: 100%;
 		padding: 0;
@@ -40,16 +43,28 @@
 		/*margin: 0px 10px; 
 		border: 10px solid black;*/
 	}
+
 	#computerScreen {
-		border-top: 3px solid black; 
+		border-top: 3px solid black;
+		border-bottom: 3px solid black; 
 	}
-	#computerScreen img {
-		float: none;
-		margin: 0 auto;
+
+	#resultBlock {
+		font-size: 2em;
 	}
+
+	.resultTitle {
+		margin: 0;
+	}
+
+	.winCountTitle {
+		margin-top: 0;
+	}
+
 	#stats {
 		width: 100%;
 		margin: 0;
 		border-radius: 0;
+		font-size: 2em;
 	}
 }

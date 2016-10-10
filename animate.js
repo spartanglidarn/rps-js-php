@@ -25,8 +25,8 @@ var Animate = function(imgOne, imgTwo, weaponClick) {
 			console.log(imgTwo);
 			var runResult = new Result(result);
 			drawCount = gameCount - (winCount + loseCount);
-			$("#gameCount").text(gameCount + " games have been played");
-			$("#drawCount").text(drawCount + " games have ended in a draw");
+			$("#gameCount").text(gameCount + " games played");
+			$("#drawCount").text(drawCount + " games ended with draw");
 
 			$(".weapon").on("click", weaponClick()); 
 			};	

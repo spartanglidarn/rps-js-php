@@ -76,6 +76,7 @@ footer {
 }
 
 .resultScreen img {
+	float: none;
 	margin: 0 auto;
 }
 
@@ -89,7 +90,8 @@ footer {
 	}
 
 #computerChoice {
-	float: right;
+	float: none;
+	margin: 0 auto;
 	-moz-transform: scaleX(-1);
 	-o-transform: scaleX(-1);
 	-webkit-transform: scaleX(-1);
@@ -135,3 +137,4 @@ footer {
 .clear {
 	clear: both;
 }
+

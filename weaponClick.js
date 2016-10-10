@@ -15,7 +15,7 @@ var weaponClick =function(){
 
 	$(".weapon").click(function(){
 		$(".weaponChoice").css("display", "none");
-		$(".weaponChoice").fadeIn(500);
+		$(".weaponChoice").fadeIn(2000);
 		$(".resultScreen").removeClass("winnerScreen loserScreen drawScreen thinkingScreen").toggleClass("thinkingScreen", true);
 		//skapar ett random nummer och väljer sedan ett vapen till datorn
 		$("#playerResult").text("You choose " + playerOne);
@@ -51,12 +51,8 @@ var weaponClick =function(){
 		//animerar bilder vid val av vapen.
 		var AnimateResult = new Animate(playerOneImg, playerTwoImg, weaponClick);
 
-		//Skriver sedan ut detta på sidan.
-//		$("#gameCount").text(gameCount + " games have been played");
-//		$("#drawCount").text(drawCount + " games have ended in a draw");
-
 		//skriver ut resultatet i konsolen för att förenkla tester
-		console.log(result);
+		//console.log(result);
 		//lägger till valet av vapen i två separata array för. 
 		playerMoves.push(playerOne);
 		computerMoves.push(playerTwo);
