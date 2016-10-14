@@ -9,18 +9,18 @@
 
 <!-- Egna CSS och JS filer -->
 
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="style/style.css">
 
-<link rel="stylesheet" type="text/css" href="desktop.css">
-<link rel="stylesheet" type="text/css" href="mobile.css">
+<link rel="stylesheet" type="text/css" href="style/desktop.css">
+<link rel="stylesheet" type="text/css" href="style/mobile.css">
 
-<script src="weapons/rock.js"></script>
-<script src="weapons/paper.js"></script>
-<script src="weapons/scissor.js"></script>
-<script src="animate.js"></script>
-<script src="result.js"></script>
-<script src="weaponClick.js"></script>
-<script src="script.js"></script>
+<script src="script/weapons/rock.js"></script>
+<script src="script/weapons/paper.js"></script>
+<script src="script/weapons/scissor.js"></script>
+<script src="script/animate.js"></script>
+<script src="script/result.js"></script>
+<script src="script/weaponClick.js"></script>
+<script src="script/script.js"></script>
 
 <title>Gesällprov 2016</title>
 </head>

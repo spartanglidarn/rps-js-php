@@ -1,4 +1,7 @@
-
+//Animations funktion som anropas när både användaren och datorn har valt ett vapen
+/*Denna funktion tar emot spelarnas vapen samt funktionen weaponClick.
+Klassen hanterar allt visuellt som händer efter att användaren klickat på sitt vapen
+och tills det att omgångens resultatvisas.*/
 var Animate = function(imgOne, imgTwo, weaponClick) {
 	var thinkingArray = new Array();
 	var picArray = new Array();
@@ -9,6 +12,9 @@ var Animate = function(imgOne, imgTwo, weaponClick) {
 	var thisId = 0;
 	var intervalCount = 0;
 
+//Sätter en intervall som ändrar bild datorns resultatsruta en gång var tiondels sekund.
+//Intervallen lägger även till en punkt efter texten "thinkning" med samma tidsintervall
+//Samt att den avaktiverar vapenknapparna under tiden som animationen körs.
 	var theInterval = setInterval(function () {
 		$("#computerResult").text("Thinking" + thinkingArray.join(""));
 		thinkingArray.push(".");

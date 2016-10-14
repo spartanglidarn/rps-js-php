@@ -1,3 +1,9 @@
+/*Detta är huvudfunktionen som startar själva programmet och sätter globala variabler
+När användaren klickar på ett av vapnen så aktiveras funktionen weaponClick och spelet körs
+Om vi skulle lägga till fler funktioner som ska köras oberoende från sten sax påse spelet så är det här de ska initieras.
+*/
+
+
 //Deklarerar globala variabler
 //Spelarens val av vapen
 var playerOne = "";

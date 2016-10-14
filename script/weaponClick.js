@@ -1,3 +1,6 @@
+/*Denna funktion definerar vad som händer när användaren klickar på ett vapen.*/
+
+
 //definerar vad som händer när användaren klickar på något av vapnen.
 var weaponClick =function(){
 	$("#rock").on("click" , function(){

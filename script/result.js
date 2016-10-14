@@ -1,3 +1,5 @@
+//Vapenfunktionerna som ligger under mappen /weapons räknar ut vem det är som är vinnare och förlorare
+/*Denna funktion tar emot det resultatet och skriver ut det på rätt plats på HTML sidan. */
 var Result = function (result) {	
 	if (result =="Win") {
 		$("#playerResult").text("Winner");
