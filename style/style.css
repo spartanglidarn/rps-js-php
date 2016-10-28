@@ -13,8 +13,10 @@ Color scheme.
 
 body{
 	background-color: #feffff; /* light grey */
-	font-family: "HelvetivaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-	font-weight: 500;
+	
+	font-family: "VT323", monospace, "HelvetivaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: lighter;
+	letter-spacing: 2px;
 	font-size: 14px;
 	color: #daad86;
 }	
@@ -66,7 +68,6 @@ footer {
 
 .resultScreen {
 	float: left;
-	border-radius: 15px;
 	position: relative;
 	height: 400px;
 	width: 350px;
@@ -88,6 +89,16 @@ footer {
 	.weapon:hover {
 	border: 5px solid black;
 	}
+
+.weapon img{
+	width: 200px;
+	height: 200px;
+}
+
+.weaponChoice {
+	width: 200px;
+	height: 200px;
+}
 
 #computerChoice {
 	float: none;
@@ -121,7 +132,6 @@ footer {
 	}
 
 #stats {
-	border-radius:15px;
 	background-color: #312c32;
 	float: left;
 }

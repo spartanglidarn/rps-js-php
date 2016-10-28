@@ -24,6 +24,7 @@ var Animate = function(imgOne, imgTwo, weaponClick) {
 		if (intervalCount % 10 == 0) thinkingArray=[];
 		intervalCount ++;
 		$(".weapon").off("click");	
+		//$(".weapon").fadeOut("slow");	
 		if (intervalCount == thinkingTime){
 			clearInterval(theInterval);
 			$(".resultScreen").toggleClass("thinkingScreen", false);
@@ -33,7 +34,7 @@ var Animate = function(imgOne, imgTwo, weaponClick) {
 			drawCount = gameCount - (winCount + loseCount);
 			$("#gameCount").text(gameCount + " games played");
 			$("#drawCount").text(drawCount + " games ended with draw");
-
+			//$(".weapon").fadeIn("fast");	
 			$(".weapon").on("click", weaponClick()); 
 			};	
 	}, 100);	
