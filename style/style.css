@@ -59,6 +59,7 @@ footer {
 	.blockList li{
 		float: left;
 		margin: 10px;
+		cursor:pointer;
 	}
 
 	.blockList li img{
@@ -169,4 +170,13 @@ footer {
 #loginForm h3 {
 	text-align: center;
 	color: #D32F2F;
+}
+
+
+#gameArea {
+	display: none;
+}
+
+#gameType ul li {
+	border: 1px solid black;
 }

@@ -8,7 +8,7 @@ var Animate = function(imgOne, imgTwo, weaponClick) {
 	picArray[0] = "img/rock.png";
 	picArray[1] = "img/paper.png";
 	picArray[2] = "img/scissor.png";
-	var thinkingTime = 30;
+	var thinkingTime = 3; // set down to 3 for testing. should be 30
 	var thisId = 0;
 	var intervalCount = 0;
 
@@ -35,8 +35,24 @@ var Animate = function(imgOne, imgTwo, weaponClick) {
 			$("#gameCount").text(gameCount + " games played");
 			$("#drawCount").text(drawCount + " games ended with draw");
 			//$(".weapon").fadeIn("fast");	
-			$(".weapon").on("click", weaponClick()); 
-			};	
+			$(".weapon").on("click", weaponClick(gamesToPlay));
+			if (gamesToPlay == gameCount) {
+				$("#gameType").fadeIn(500);
+				$("#gameResult").fadeIn(500);
+				if (winCount > loseCount) {
+					$("#gameResult").append("<h1>You win the game</h1>");
+				} else if (winCount == loseCount) {
+					$("#gameResult").append("<h1>It's a draw</h1>");
+				} else {
+					$("#gameResult").append("<h1>You lose the game</h1>");
+				};				
+				console.log("playerMoves: " + playerMoves);
+				console.log("computerMoves: " + computerMoves);
+				console.log("resultList: " + resultList);
+				resetGame();
+			};
+		};	
 	}, 100);	
 	$("#playerChoice").css("visibility","visible").fadeIn(1000).attr("src", imgOne);
 }
+

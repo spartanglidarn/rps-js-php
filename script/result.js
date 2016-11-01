@@ -8,6 +8,7 @@ var Result = function (result) {
 		$("#computerScreen").addClass("loserScreen");
 		winCount ++;
 		$("#playerWinCount").text("You have won " + winCount + " times");
+		resultList.push("Win");
 	} else if (result == "Lose") {
 		$("#playerResult").text("Loser");
 		$("#computerResult").text("Winner");
@@ -15,9 +16,11 @@ var Result = function (result) {
 		$("#playerScreen").addClass("loserScreen");
 		loseCount ++;
 		$("#computerWinCount").text("The computer have won " + loseCount + " times");
+		resultList.push("Lose");
 	} else {
 		$("#playerResult").text("Draw");
 		$("#computerResult").text("Draw");	
 		$(".resultScreen").addClass("drawScreen");
+		resultList.push("Draw");
 	};
 }
