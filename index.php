@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="sv">
 
@@ -30,6 +34,13 @@
 
 
 	<h1>Gesällprov webbutveckling klient 2016</h1>
+	<div id="">
+		<ul>
+			<!-- Menue created frome menuBar.php file -->
+			<?php include 'menuBar.php'; ?>		
+		</ul>
+
+	</div>
 	<div id="container" class="container">
 
 		<div id="weaponsArea" class="blockList">
@@ -66,6 +77,36 @@
 	</div>
 	<div class="clear"></div>
 
+
+	<div id="loginForm">
+		<h4>Sign in:</h4>
+		<form method="POST" action="login/checklogin.php">
+			<label>Username: </label><br>
+			<input type="text" name="usr"><br>
+			<label>Password: </label><br>
+			<input type="password" name="pass"><br>
+			<input type="submit" name="submit" value="Sign in">
+		</form>
+	</div>
+
+	<div id="newAccForm">
+		<h4>Create new account:</h4>
+		<form method="POST" action="login/addusr.php">
+			<label>Firstname: </label><br>
+			<input type="text" name="firstname"><br>
+			<label>Lastname:</label><br>
+			<input type="text" name="lastname"><br>
+			<label>Email: </label><br>
+			<input type="text" name="email"><br>
+			<label>Username: </label><br>
+			<input type="text" name="username"><br>
+			<label>Password: </label><br>
+			<input type="password" name="passone"><br>
+			<label>Repeat password: </label><br>
+			<input type="password" name="passtwo"><br>
+			<input type="submit" name="submit" value="Create new account">
+		</form>
+	</div>
 
 </div>
 <footer>Skapad av Erik Boström 2016</footer>

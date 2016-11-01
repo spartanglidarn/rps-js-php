@@ -28,6 +28,26 @@ var computerNr = 0;
 $(document).ready(function(){
 	//kör weaponClick funktionen så att alla vapen aktiveras och är klickbara
 	weaponClick();
+
+	//Get the value from URL
+	var urlStatus = location.search;
+
+	console.log(urlStatus);
+
+	if (urlStatus == "?loginNotOk"){
+		$("#loginForm").append("<h3>Incorrect username or password</h3>");
+		$("#loginForm").show(0);
+	}
+
+	$("#loginBtn").on("click", function(){
+		$("#newAccForm").hide(500);
+		$("#loginForm").fadeIn(500);
+	});
+	$("#newAccBtn").on("click", function(){
+		$("#loginForm").hide(500);
+		$("#newAccForm").fadeIn(500);
+	});
+
 });
 
 
