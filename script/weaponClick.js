@@ -13,11 +13,11 @@ var weaponClick = function(gamesToPlay){
 		});
 		$("#paper").on("click" , function(){
 			playerOne = "paper";
-			playerOneImg = "img/paper.png"
+			playerOneImg = "img/paper.png";
 		});
 		$("#scissor").on("click" , function(){
 			playerOne = "scissor";
-			playerOneImg = "img/scissor.png"
+			playerOneImg = "img/scissor.png";
 		});	
 
 		$(".weapon").on("click" , function(){

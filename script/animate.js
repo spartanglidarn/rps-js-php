@@ -8,7 +8,7 @@ var Animate = function(imgOne, imgTwo, weaponClick) {
 	picArray[0] = "img/rock.png";
 	picArray[1] = "img/paper.png";
 	picArray[2] = "img/scissor.png";
-	var thinkingTime = 3; // set down to 3 for testing. should be 30
+	var thinkingTime = 30; // set down to 3 for testing. should be 30
 	var thisId = 0;
 	var intervalCount = 0;
 
