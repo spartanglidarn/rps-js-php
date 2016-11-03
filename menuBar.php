@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_SESSION['username'])){
-	echo '<h3>Welcome ' . $_SESSION['firstName'] . '!</h3>';
+	echo '<h3>Welcome ' . $_SESSION['firstName'] . 'your id is ' . $_SESSION['userId'] . '!</h3>';
 	echo '<li><a href="#">My profile</a></li>';
 	echo '<li><a href="#">High score</a></li>';
 	echo '<li><a href="#">Challenge a friend</a></li>';

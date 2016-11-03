@@ -7,7 +7,7 @@ $username = strip_tags($_POST['usr']);
 $pass = $_POST['pass'];
 $timeStamp = date('Y-m-d H:i:s');
 
-$stmt = $conn->prepare('SELECT userName, userPass, userEmail, first_name, last_name FROM users WHERE username=?');
+$stmt = $conn->prepare('SELECT userId, userName, userPass, userEmail, first_name, last_name FROM users WHERE username=?');
 $stmtTwo = $conn->prepare('UPDATE users SET last_login=? WHERE userEmail=?');
 //check the prepare statement
 if ( false===$stmt ) {
@@ -37,7 +37,7 @@ if ( false===$stmtexe ) {
 	die('execute() failed: ' . htmlspecialchars($stmt->error));
 } 
 
-$stmtbind = $stmt->bind_result($bindUsr, $bindPass, $bindEmail, $bindFirstName, $bindLastName);
+$stmtbind = $stmt->bind_result($bindId, $bindUsr, $bindPass, $bindEmail, $bindFirstName, $bindLastName);
 
 //check the bind statement 
 if (false === $stmtbind) {
@@ -56,6 +56,7 @@ if (empty($bindUsr)) {
 } else {
 	if (password_verify($pass, $bindPass)) {
 		session_start();
+		$_SESSION["userId"] = $bindId;
 		$_SESSION["username"] = $bindUsr;
 		$_SESSION["email"] = $bindEmail;
 		$_SESSION["firstName"] = $bindFirstName;
