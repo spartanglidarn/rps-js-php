@@ -20,17 +20,17 @@ if(isset($_SESSION['userId'])){
 
 //foreach ($_POST as $value) {
 
-	$bp = $stmt->bind_param('sssis', $playerMoves, $computerMoves, $resultList, $userId, $timeStamp);
-	
-	if ( false===$bp ) {
-		die('bind_param() failed: ' . htmlspecialchars($stmt->error));
-	}
+$bp = $stmt->bind_param('sssis', $playerMoves, $computerMoves, $resultList, $userId, $timeStamp);
 
-	$stmtexe = $stmt->execute();
-	
-	if ( false===$stmtexe ) {
-	  die('execute() failed: ' . htmlspecialchars($stmt->error));
-	}
+if ( false===$bp ) {
+	die('bind_param() failed: ' . htmlspecialchars($stmt->error));
+}
+
+$stmtexe = $stmt->execute();
+
+if ( false===$stmtexe ) {
+  die('execute() failed: ' . htmlspecialchars($stmt->error));
+}
 //};
 
 $stmt->close();

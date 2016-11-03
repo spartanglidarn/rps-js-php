@@ -31,11 +31,14 @@ session_start();
 <script src="script/resetGame.js"></script>
 <script src="script/script.js"></script>
 
+<!-- load google charts -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 <title>Gesällprov 2016</title>
 </head>
 <body>
 
-	<h1>Gesällprov webbutveckling klient 2016</h1>
+	<h1><a href="http://localhost:8080/rps-js-php-2.0/rps-js-php/">Gesällprov webbutveckling klient 2016</a></h1>
 
 		<ul>
 			<!-- Menue created frome menuBar.php file -->
