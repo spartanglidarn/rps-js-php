@@ -1,104 +1,94 @@
 <?php 
-include'header.php';
-include 'login/dbconn.php'; 
-
-//SELECT * FROM stats WHERE userId = ?;
-
-$stmt = $conn -> prepare('SELECT playerMoves, computerMoves, resultList FROM stats WHERE userId = ? ORDER BY gameId');
-if ($stmt === false) {
-	die ('prepare failed: ' . htmlspecialchars($mysqli->error));
-}
-
-$bp = $stmt -> bind_param('i', $_SESSION['userId']);
-if ($bp === false) {
-	die ('bind parameters failed: ' . htmlspecialchars($mysqli->error));
-}
-
-$stmtexe = $stmt -> execute();
-if ($stmtexe === false) {
-	die ('execution statement failed: ' . htmlspecialchars($mysqli->error));
-}
-
-$stmtbind = $stmt->bind_result($playerMoves, $computerMoves, $resultList);
-if ($stmtbind === false) {
-	die ('binding of results failed: ' . htmlspecialchars($mysqli->error));
-}
-
-$playerMovesArray = array();
-$computerMovesArray = array();
-$resultListArray = array();
-
-$weaponCount = 0;
-$rockCount = 0;
-$paperCount = 0;
-$scissorCount = 0;
-
-while ($stmt -> fetch()){
-	/*$playerMovesArray -> append ( array ( explode ( ',' , $playerMoves ) ) );
-	$computerMovesArray -> append ( array ( explode ( ',' , $computerMoves) ) );
-	$resultListArray -> append ( array ( explode ( ',' , $resultList) ) );*/
-	array_push($playerMovesArray, explode (',' , $playerMoves));
-
-}
-
-
-foreach ($playerMovesArray as $key => $value) {
-
-	foreach ($value as $key => $value) {
-		
-		//print_r($key . $value);
-		//echo "<br>";
-
-		$weaponCount ++;
-		if ($value == "rock"){
-			$rockCount ++;
-		} elseif ($value == "paper"){
-			$paperCount ++;
-		} elseif ($value == "scissor") {
-			$scissorCount ++;
-		} else {
-			echo "Error! wrong weapon in array database!!!!";
-		}
-
-	}
-}
-
-$rockProcent = $rockCount / $weaponCount;
-$paperProcent = $paperCount / $weaponCount;
-$scissorProcent = $scissorCount / $weaponCount;
-
-
-echo "<br>You have used rocks " . $rockCount . " times.<br>";
-echo "<br>You have used paper " . $paperCount . " times.<br>";
-echo "<br>You have used scissor " . $scissorCount . " times.<br>";
+include'stats/getStats.php';
 
 ?>
 
 <script type="text/javascript">
-	google.charts.load('current', {packages: ['corechart']});
-	google.charts.setOnLoadCallback(drawChart);
+$(function () { 
+    var myChart = Highcharts.chart('chartContainer', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Most used weapons'
+        },
+        xAxis: {
+            categories: ['Rock', 'Paper', 'Scissor']
+        },
+        yAxis: {
+            title: {
+                text: 'Users'
+            }
+        },
+        series: [{
+            name: <?php echo "'" . $_SESSION["username"] . "'"; ?>,
+            data: [<?php echo $playerRockCount . "," . $playerPaperCount . "," . $playerScissorCount ?>]
+        }, {
+            name: 'Computer',
+            data: [<?php echo $computerRockCount . "," . $computerPaperCount . "," . $computerScissorCount ?>]
+        }]
+    });
+});
 
-	function drawChart() {
-		// Define the chart to be drawn.
-		var data = new google.visualization.DataTable();
-		data.addColumn('string', 'Element');
-		data.addColumn('number', 'Percentage');
-		data.addRows([
-			['Rock', <?php echo $rockProcent; ?>],
-			['Paper', <?php echo $paperProcent; ?>],
-			['Scissor', <?php echo $scissorProcent; ?>]
-		]);
+$(function () { 
+    var myChart = Highcharts.chart('gamePieChart', {
+        chart: {
+            type: 'pie'
+        },
+        title: {
+            text: 'Game statistics'
+        },
+        series: [{
+            name: '%',
+            colorByPoint: true,
+            data: [{
+                name: 'Win',
+                y: <?php echo $playerWinProcent ?>
+            }, {
+                name: 'Lose',
+                y: <?php echo $computerWinProcent ?>
+            }, {
+                name: 'Draw',
+                y: <?php echo $drawProcent ?>
+            }]
+        }],
+    });
+});
 
-		// Instantiate and draw the chart.
-		var chart = new google.visualization.PieChart(document.getElementById('myPieChart'));
-		chart.draw(data, null);
-	}
+$(function () { 
+    var myChart = Highcharts.chart('roundPieChart', {
+        chart: {
+            type: 'pie'
+        },
+        title: {
+            text: 'Round statistics'
+        },
+        series: [{
+            name: '%',
+            colorByPoint: true,
+            data: [{
+                name: 'Win',
+                y: <?php echo $playerRoundWinProcent ?>
+            }, {
+                name: 'Lose',
+                y: <?php echo $computerRoundWinProcent ?>
+            }, {
+                name: 'Draw',
+                y: <?php echo $drawRoundProcent ?>
+            }]
+        }],
+    });
+});
 
 </script>
 
+<div id="chartContainer" style="width:100%; height:400px;"></div>
 
-  <!-- Identify where the chart should be drawn. -->
-  <div id="myPieChart"/>
+<div id="gamePieChart" class ="piCharts" ></div>
+<div id="roundPieChart" class ="piCharts"></div>
+<div class="clear"></div>
+
+
 
 
 <?php include 'footer.php'; ?>	

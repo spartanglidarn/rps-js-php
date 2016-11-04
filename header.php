@@ -31,8 +31,8 @@ session_start();
 <script src="script/resetGame.js"></script>
 <script src="script/script.js"></script>
 
-<!-- load google charts -->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- load high charts -->
+<script src="http://code.highcharts.com/highcharts.js"></script>
 
 <title>Gesällprov 2016</title>
 </head>

@@ -182,3 +182,11 @@ footer {
 	padding: 20px;
 
 }
+
+.piCharts {
+	float: left;
+	width:45%; 
+	height:400px;
+	margin: 15px;
+}
+
