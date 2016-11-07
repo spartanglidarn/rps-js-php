@@ -8,7 +8,7 @@ var Animate = function(imgOne, imgTwo, weaponClick) {
 	picArray[0] = "img/rock.png";
 	picArray[1] = "img/paper.png";
 	picArray[2] = "img/scissor.png";
-	var thinkingTime = 30; // set down to 3 for testing. should be 30
+	var thinkingTime = 20; 
 	var thisId = 0;
 	var intervalCount = 0;
 
@@ -23,18 +23,15 @@ var Animate = function(imgOne, imgTwo, weaponClick) {
 		if (thisId == 3) thisId=0;
 		if (intervalCount % 10 == 0) thinkingArray=[];
 		intervalCount ++;
-		$(".weapon").off("click");	
-		//$(".weapon").fadeOut("slow");	
+		$(".weapon").off("click");		
 		if (intervalCount == thinkingTime){
 			clearInterval(theInterval);
 			$(".resultScreen").toggleClass("thinkingScreen", false);
 			$("#computerChoice").attr("src", imgTwo);
-			//console.log(imgTwo);
 			var runResult = new Result(result);
 			drawCount = gameCount - (winCount + loseCount);
 			$("#gameCount").text(gameCount + " games played");
 			$("#drawCount").text(drawCount + " games ended with draw");
-			//$(".weapon").fadeIn("fast");	
 			$(".weapon").on("click", weaponClick(gamesToPlay));
 			if (gamesToPlay == gameCount) {
 				$("#gameType").fadeIn(500);
@@ -46,9 +43,12 @@ var Animate = function(imgOne, imgTwo, weaponClick) {
 				} else {
 					$("#gameResult").append("<h1>You lose the game</h1>");
 				};				
+				/*
+				nedan tre console.log används vid felsökning av stats funktionen.
 				console.log("playerMoves: " + playerMoves);
 				console.log("computerMoves: " + computerMoves);
 				console.log("resultList: " + resultList);
+				*/
 				resetGame();
 			};
 		};	

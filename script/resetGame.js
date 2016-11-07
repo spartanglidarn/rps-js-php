@@ -6,7 +6,7 @@ var resetGame = function() {
 			computerMoves: computerMoves,
 			resultList: resultList
 		} );
-
+		//nollställer match-data så en ny match kan påbörjas.
 		winCount = 0;
 		loseCount = 0;
 		gameCount = 0;

@@ -30,7 +30,7 @@ var weaponClick = function(gamesToPlay){
 			$("#playerResult").text("You choose " + playerOne);
 			$("#computerResult").text("Thinking");
 			gameCount ++;
-			//var drawCount = gameCount - (winCount + loseCount);
+			
 			computerNr = Math.random();
 
 			if (computerNr < 0.33) {
@@ -46,7 +46,7 @@ var weaponClick = function(gamesToPlay){
 
 			//Kollar vad användaren har valt för vapen 
 			//och kör sedan vapen funktionen med datorns val som egenskap
-			//Koden för dessa objekt ligger i sparata filer under mappen weapons
+			//Koden för dessa objekt ligger i separata filer under mappen weapons
 			if (playerOne == "rock") {
 				var rockWeapon = new Rock(playerTwo);
 			} else if (playerOne == "paper") {
@@ -59,9 +59,7 @@ var weaponClick = function(gamesToPlay){
 
 			//animerar bilder vid val av vapen.
 			var AnimateResult = new Animate(playerOneImg, playerTwoImg, weaponClick);
-
-			//skriver ut resultatet i konsolen för att förenkla tester
-			//console.log(result);
+		
 			//lägger till valet av vapen i två separata array för. 
 			playerMoves.push(playerOne);
 			computerMoves.push(playerTwo);

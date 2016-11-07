@@ -31,13 +31,13 @@ var computerNr = 0;
 //kod som körs när sidan har laddats klart
 $(document).ready(function(){
 	
-	//Activate the game type functions
+	//Aktiverar gameType funktionen.
 	gameType();
 
-	//Get the value from URL
+	//Sparar ner get variabeln.
 	var urlStatus = location.search;
 
-
+	//väljer felmeddelande beroende på vilken get variabel som är satt
 	switch (urlStatus) {
 		case "?wrongUsr":
 			$("#loginForm").append("<h3>Wrong username</h3>");
@@ -66,17 +66,19 @@ $(document).ready(function(){
 			break;		
 	}
 
-
+	//login knapp
 	$("#loginBtn").on("click", function(){
 		$("#newAccForm").hide(500);
 		$("#loginForm").fadeIn(500);
 	});
 
+	// create new accont knapp
 	$("#newAccBtn").on("click", function(){
 		$("#loginForm").hide(500);
 		$("#newAccForm").fadeIn(500);
 	});
 
+	//stäng knappen i rutan på login och create account formulären
 	$(".exitBtn").on("click", function(){
 		$(this).parent().hide(500);
 	});

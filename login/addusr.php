@@ -1,4 +1,5 @@
 <?php
+//lägger till en användare i databasen. 
 $passone = $_POST['passone'];
 $passtwo = $_POST['passtwo'];
 $wrongPassURL = "../index.php?passNoMatch";
@@ -6,17 +7,18 @@ $emailInUse = "../index.php?emailInUse";
 $userInUse = "../index.php?userInUse";
 $scriptOkURL = "../index.php?usrCreated";
 
+//kollar ifall användaren har skrivit samma lösen i båda lösenords rutorna. Om de inte är samma skickas användaren tillbaka med en GET parameter och ett felmeddelande visas. Om lösenorden stämmer går programmet vidare med att skapa användaren.
 if ($passone != $passtwo) {
 	header('Location: '.$wrongPassURL);
 } else {
-
 	include 'dbconn.php';
 
-	//Form information
+	//hämtar informationen från formulär och lägger in den i variabler
 	$firstname = strip_tags($_POST['firstname']);
 	$lastname = strip_tags($_POST['lastname']);
 	$email = strip_tags($_POST['email']);
 	$username = strip_tags($_POST['username']);
+	//krypterar lösen med hjälp av PHP's inbyggda API
 	$password = password_hash($_POST['passone'], PASSWORD_DEFAULT);
 	$timeStamp = date('Y-m-d H:i:s');
 
@@ -41,7 +43,7 @@ if ($passone != $passtwo) {
 		die('bind() email check failed: ' . htmlspecialchars($stmt->error));
 	}
 
-	//kolla ifall eposten redan finns i databasen, om den gör det skicka tillbaka anävndaren till loginformuläret.
+	//Ifall eposten redan finns i databasen skickas användaren tillbaka till startsidan med en get variabel och ett felmeddelande visas.
 	if (!$checkEmail) {
 		header('Location: '.$emailInUse);
 	}
@@ -69,7 +71,7 @@ if ($passone != $passtwo) {
 		die('bind() email check failed: ' . htmlspecialchars($stmt->error));
 	}
 
-	//kolla ifall eposten redan finns i databasen, om den gör det skicka tillbaka anävndaren till loginformuläret.
+	//Ifall användarnamnet redan finns i databasen skickas användaren tillbaka till startsidan med en get variabel och ett felmeddelande visas.
 	if (!$checkUsername) {
 		header('Location: '.$userInUse);
 	}
@@ -80,37 +82,27 @@ if ($passone != $passtwo) {
 	//skapar sql request för att skapa användaren.
 	$stmt = $conn->prepare('INSERT INTO users (userName, userEmail, userPass, first_name, last_name, reg_date)
 							VALUES (?, ?, ?, ?, ?, ?)');
-	//check the prepare statement
+	//felmeddelande för prepare statement
 	if ( false===$stmt ) {
 	  die('prepare() failed: ' . htmlspecialchars($mysqli->error));
 	}
 
 	$bp = $stmt->bind_param('ssssss', $username, $email, $password, $firstname, $lastname, $timeStamp);
-	//check the bind parameter statement
 	if ( false===$bp ) {
 		die('bind_param() failed: ' . htmlspecialchars($stmt->error));
 	}
 
 
 	$stmtexe = $stmt->execute();
-	//check the exicution of statement
 	if ( false===$stmtexe ) {
 		die('execute() failed: ' . htmlspecialchars($stmt->error) . $stmt->errno . ":  " . $stmt->sqlstate);
 	} else {
-		//return to register and login page
+		//ifall inga felmeddelanden returnerats från databasen så antar vi att användaren har skapats och skickar tillbaka användaren till startsidan med get variabel så loginformuläret kan visas.
 		header('Location: '.$scriptOkURL);
 	}
 
 }
-// username: 23000
-/*
-firstname
-lastname
-email
-username
-passone
-passtwo
-*/
+
 ?>
 
 
