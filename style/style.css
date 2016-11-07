@@ -25,13 +25,12 @@ h1, h2, h3, h4, h4, h6 {
 }
 
 	h1 {
-		background-color: #004060;
+		background-color: #312c32;
 		color: #ffffff;
 		text-align: center;
 	}
 
 #siteTitle a {
-		background-color: #004060;
 		color: #ffffff;
 		text-align: center;
 }
@@ -47,14 +46,17 @@ a:hover {
 
 
 footer {
-	background-color: #004060;
+	background-color: #312c32;
 	color: #ffffff;
 	text-align: center;
 }
 
+#menuBar li, #menuBar li a{
+	color: #312c32;
+}
+
 #container {
 	margin: 0 auto;
-
 }
 
 .blockList ul {
@@ -174,11 +176,10 @@ footer {
 	text-align: center;
 }
 
-#loginForm, #newAccForm h3 {
+#loginForm h3, #newAccForm h3 {
 	text-align: center;
 	color: #D32F2F;
 }
-
 
 #gameArea {
 	display: none;
@@ -190,10 +191,7 @@ footer {
 	width: 100px;
 	height: 100px;
 	background-color: #312c32;
-
 }
-
-
 
 .piCharts {
 	float: left;

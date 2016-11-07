@@ -3,11 +3,21 @@
 
 	}
 
-
-
 	#container {
 		width: 100%;
 		padding: 0;
+	}
+
+	#gameType ul li {
+		background-color: #312c32;
+		margin: 0;
+		width: 25%;
+		border: none;
+	}
+
+	#gameType ul li img {
+		margin: 0 auto;
+		border: none;
 	}
 
 	#weaponsArea ul {

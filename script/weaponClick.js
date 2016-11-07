@@ -21,8 +21,10 @@ var weaponClick = function(gamesToPlay){
 		});	
 
 		$(".weapon").on("click" , function(){
+		/* används för att felsöka statistik funktionen.
 		console.log("game count " + gameCount);
 		console.log("games to play " + gamesToPlay);
+		*/
 			$(".weaponChoice").css("display", "none");
 			$(".weaponChoice").fadeIn(2000);
 			$(".resultScreen").removeClass("winnerScreen loserScreen drawScreen thinkingScreen").toggleClass("thinkingScreen", true);
