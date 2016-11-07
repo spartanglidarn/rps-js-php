@@ -38,7 +38,7 @@ session_start();
 </head>
 <body>
 
-	<h1><a href="http://localhost:8080/rps-js-php-2.0/rps-js-php/">Gesällprov webbutveckling klient 2016</a></h1>
+	<h1 id="siteTitle"><a href="http://localhost:8080/rps-js-php-2.0/rps-js-php/">Gesällprov webbutveckling klient 2016</a></h1>
 
 		<ul>
 			<!-- Menue created frome menuBar.php file -->

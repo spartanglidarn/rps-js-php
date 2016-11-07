@@ -13,7 +13,6 @@ Color scheme.
 
 body{
 	background-color: #feffff; /* light grey */
-	
 	font-family: "VT323", monospace, "HelvetivaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	font-weight: lighter;
 	letter-spacing: 2px;
@@ -31,6 +30,12 @@ h1, h2, h3, h4, h4, h6 {
 		text-align: center;
 	}
 
+#siteTitle a {
+		background-color: #004060;
+		color: #ffffff;
+		text-align: center;
+}
+
 a, a:visited {
 	color: #006699;
 	text-decoration: none;
@@ -38,6 +43,8 @@ a, a:visited {
 a:hover {
 	text-decoration: underline;
 }
+
+
 
 footer {
 	background-color: #004060;
@@ -167,7 +174,7 @@ footer {
 	text-align: center;
 }
 
-#loginForm h3 {
+#loginForm, #newAccForm h3 {
 	text-align: center;
 	color: #D32F2F;
 }
@@ -177,11 +184,16 @@ footer {
 	display: none;
 }
 
-#gameType ul li {
+#gameType ul li img {
 	border: 1px solid black;
 	padding: 20px;
+	width: 100px;
+	height: 100px;
+	background-color: #312c32;
 
 }
+
+
 
 .piCharts {
 	float: left;
@@ -190,3 +202,11 @@ footer {
 	margin: 15px;
 }
 
+.exitBtn {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	cursor:pointer;
+}

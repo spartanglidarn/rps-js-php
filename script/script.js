@@ -34,26 +34,51 @@ $(document).ready(function(){
 	//Activate the game type functions
 	gameType();
 
-	//kör weaponClick funktionen så att alla vapen aktiveras och är klickbara
-	//weaponClick();
-
 	//Get the value from URL
 	var urlStatus = location.search;
 
-	//console.log(urlStatus);
 
-	if (urlStatus == "?loginNotOk"){
-		$("#loginForm").append("<h3>Incorrect username or password</h3>");
-		$("#loginForm").show(0);
+	switch (urlStatus) {
+		case "?wrongUsr":
+			$("#loginForm").append("<h3>Wrong username</h3>");
+			$("#loginForm").show(0);
+			break;
+		case "?wrongPass":
+			$("#loginForm").append("<h3>Wrong password</h3>");
+			$("#loginForm").show(0);
+			break;
+		case "?usrCreated":
+			$("#loginForm").append("<h3>User created, login here.</h3>");
+			$("#loginForm").show(0);
+			break;			
+		case "?emailInUse":
+			$("#newAccForm").append("<h3>Email adress is already in use</h3>");
+			$("#newAccForm").show(0);
+			break;
+		case "?userInUse":
+			$("#newAccForm").append("<h3>Username is already in use</h3>");
+			$("#newAccForm").show(0);
+			break;
+		case "?passNoMatch":
+			$("#newAccForm").append("<h3>Password did not match</h3>");
+			$("#newAccForm").show(0);
+		default:
+			break;		
 	}
+
 
 	$("#loginBtn").on("click", function(){
 		$("#newAccForm").hide(500);
 		$("#loginForm").fadeIn(500);
 	});
+
 	$("#newAccBtn").on("click", function(){
 		$("#loginForm").hide(500);
 		$("#newAccForm").fadeIn(500);
+	});
+
+	$(".exitBtn").on("click", function(){
+		$(this).parent().hide(500);
 	});
 
 });

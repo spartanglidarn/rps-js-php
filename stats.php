@@ -1,9 +1,10 @@
 <?php 
+//denna sida hämtar statistk genom getStats.php och publicerar den med hjälp av JS biblioteket, highchars. 
 include'stats/getStats.php';
-
 ?>
 
 <script type="text/javascript">
+//skapar grafen för hur många gånger den inloggade användaren har använt ett visst vapen. 
 $(function () { 
     var myChart = Highcharts.chart('chartContainer', {
         chart: {
@@ -29,7 +30,7 @@ $(function () {
         }]
     });
 });
-
+//skapar grafen som visar hur många gånger användaren har vunnit och förlorat matcher.
 $(function () { 
     var myChart = Highcharts.chart('gamePieChart', {
         chart: {
@@ -54,7 +55,7 @@ $(function () {
         }],
     });
 });
-
+//skapar grafen som visar hur många gånger användaren har vunnit och förlorat ronder i en match.
 $(function () { 
     var myChart = Highcharts.chart('roundPieChart', {
         chart: {
@@ -81,7 +82,7 @@ $(function () {
 });
 
 </script>
-
+<!-- placerar ut de olika graferna på sidan. -->
 <div id="chartContainer" style="width:100%; height:400px;"></div>
 
 <div id="gamePieChart" class ="piCharts" ></div>

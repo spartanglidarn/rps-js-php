@@ -1,6 +1,10 @@
 <?php
+header('Content-type: text/plain');
+
 $loginOkURL = "../index.php?loginOk"; 
-$loginNotOkURL = "../index.php?loginNotOk"; 
+$loginNotOkURL = "../index.php?loginNotOk";
+$loginWrongUsrname ="../index.php?wrongUsr"; 
+$loginWrongPass = "../index.php?wrongPass";
 include 'dbconn.php';
 
 $username = strip_tags($_POST['usr']);
@@ -8,26 +12,18 @@ $pass = $_POST['pass'];
 $timeStamp = date('Y-m-d H:i:s');
 
 $stmt = $conn->prepare('SELECT userId, userName, userPass, userEmail, first_name, last_name FROM users WHERE username=?');
-$stmtTwo = $conn->prepare('UPDATE users SET last_login=? WHERE userEmail=?');
+
 //check the prepare statement
 if ( false===$stmt ) {
   die('prepare() failed: ' . htmlspecialchars($mysqli->error));
 }
 
 
-if ( false===$stmtTwo ) {
-  die('prepare2() failed: ' . htmlspecialchars($mysqli->error));
-}
-
 $bp = $stmt->bind_param('s', $username);
-$bpTwo = $stmtTwo->bind_param('ss', $timeStamp, $bindEmail);
+
 //check the bind parameter statement
 if ( false===$bp ) {
 	die('bind_param() failed: ' . htmlspecialchars($stmt->error));
-}
-
-if ( false===$bpTwo ) {
-	die('bind_param2() failed: ' . htmlspecialchars($stmt->error));
 }
 
 
@@ -52,7 +48,8 @@ if (false === $stmtfetch) {
 }
 
 if (empty($bindUsr)) {
-	header('Location: '.$loginNotOkURL);
+	$stmt->close();
+	header('Location: '.$loginWrongUsrname);
 } else {
 	if (password_verify($pass, $bindPass)) {
 		session_start();
@@ -63,22 +60,28 @@ if (empty($bindUsr)) {
 		$_SESSION["lastName"] = $bindLastName;
 		$stmt->close();
 
+		$stmtTwo = $conn->prepare('UPDATE users SET last_login=? WHERE userEmail=?');
+
+		if ( false===$stmtTwo ) {
+ 			die('prepare2() failed: ' . htmlspecialchars($mysqli->error));
+		}
+
 		$bpTwo = $stmtTwo->bind_param('ss', $timeStamp, $bindEmail);
 		if ( false===$bpTwo ) {
-			die('bind_param2() failed: ' . htmlspecialchars($stmt->error));
+			die('bind_param2() failed: ' . htmlspecialchars($stmtTwo->error));
 		}
 
 		$stmtexeTwo = $stmtTwo->execute();
 		if ( false===$stmtexeTwo ) {
-			die('execute() failed: ' . htmlspecialchars($stmt->error));
+			die('execute2() failed: ' . htmlspecialchars($stmtTwo->error));
 		} 
-		
+		$stmtTwo->close();
 		header('Location: '.$loginOkURL);
 	} else {
-		header('Location: '.$loginNotOkURL);
-		
+		$stmt->close();
+		header('Location: '.$loginWrongPass);
 	}
 }
-$stmt->close();
-$stmtTwo->close();
+
+
 ?>

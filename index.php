@@ -1,17 +1,16 @@
 <?php include 'header.php'; ?>	
 
-	<!-- the game area that appers when the user have choosen gametype -->
-
 	<div id="gameType" class="blockList">
 		<ul>
-			<li id="bestOfOne">Best of one</li>
-			<li id="bestOfThree">Best of three</li>
-			<li id="bestOfFive">Best of five</li>
-			<li id="bestOfTen">Best of ten</li>
+			<li id="bestOfOne"><img src="img/bestOf1.png" alt="Best of one"></li>
+			<li id="bestOfThree"><img src="img/bestOf3.png" alt="Best of three"></li>
+			<li id="bestOfFive"><img src="img/bestOf5.png" alt="Best of five"></li>
+			<li id="bestOfTen"><img src="img/bestOf10.png" alt="Best of ten"></li>
 		</ul>
 	</div>
 
 	<div class="clear"></div>
+	<!-- Spelområdet som visas när användaren har valt en viss speltyp -->
 	<div id="gameArea">
 		<div id="weaponsArea" class="blockList">
 		<ul>
@@ -50,7 +49,7 @@
 	</div>
 	<div class="clear"></div>
 
-
+	<!-- formulär för att logga in. visas när användare klickar "Login" -->
 	<div id="loginForm">
 		<h4>Sign in:</h4>
 		<form method="POST" action="login/checklogin.php">
@@ -60,8 +59,9 @@
 			<input type="password" name="pass"><br>
 			<input type="submit" name="submit" value="Sign in">
 		</form>
+		<img class="exitBtn" id="loginFormExitBtn" src="img/exit.png">
 	</div>
-
+	<!-- formulär för att skapa ny användare. visas när användare klickar "create avvount" -->
 	<div id="newAccForm">
 		<h4>Create new account:</h4>
 		<form method="POST" action="login/addusr.php">
@@ -79,6 +79,7 @@
 			<input type="password" name="passtwo"><br>
 			<input type="submit" name="submit" value="Create new account">
 		</form>
+		<img class="exitBtn" id="newAccExitBtn" src="img/exit.png">
 	</div>
 
 
