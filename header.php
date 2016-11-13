@@ -38,7 +38,7 @@ session_start();
 </head>
 <body>
 
-	<h1 id="siteTitle"><a href="https://rpsjsphpstage.herokuapp.com/stats.php">Gesällprov webbutveckling server 2016</a></h1>
+	<h1 id="siteTitle"><a href="https://rpsjsphpstage.herokuapp.com">Gesällprov webbutveckling server 2016</a></h1>
 	<?php echo '<h3>Welcome ' . $_SESSION['firstName']. '!</h3>'; ?>
 		<ul id="menuBar">
 			<!-- Menue created frome menuBar.php file -->
