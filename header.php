@@ -32,7 +32,7 @@ session_start();
 <script src="script/script.js"></script>
 
 <!-- load high charts -->
-<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 
 <title>Gesällprov 2016</title>
 </head>
